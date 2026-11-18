@@ -1,0 +1,71 @@
+{
+	"name": "taskflow",
+	"private": true,
+	"type": "module",
+	"imports": {
+		"#/*": "./src/*"
+	},
+	"scripts": {
+		"preinstall": "bun x only-allow bun",
+		"dev": "vite dev --port 3000",
+		"generate-routes": "bun node_modules/@tanstack/router-cli/dist/esm/index.js generate",
+		"build": "vite build",
+		"preview": "vite preview",
+		"lint": "biome lint .",
+		"format": "biome check --write .",
+		"check": "biome check .",
+		"typecheck": "tsc --noEmit",
+		"audit": "bun scripts/audit-architecture.ts",
+		"db:generate": "drizzle-kit generate",
+		"db:migrate": "drizzle-kit migrate",
+		"db:studio": "drizzle-kit studio",
+		"db:seed": "bun src/server/infrastructure/drizzle/seed.ts"
+	},
+	"dependencies": {
+		"@base-ui/react": "^1.9.0",
+		"@better-auth/drizzle-adapter": "^1.7.25",
+		"@fontsource-variable/google-sans": "^5.3.2",
+		"@fontsource-variable/outfit": "^5.3.0",
+		"@tailwindcss/vite": "^4.3.5",
+		"@tanstack/react-devtools": "^0.10.14",
+		"@tanstack/react-form": "^1.33.5",
+		"@tanstack/react-query": "^5.108.0",
+		"@tanstack/react-router": "^1.170.46",
+		"@tanstack/react-router-devtools": "^1.167.3",
+		"@tanstack/react-router-ssr-query": "^1.167.3",
+		"@tanstack/react-start": "^1.169.5",
+		"@tanstack/react-table": "^9.3.1",
+		"better-auth": "^1.7.25",
+		"class-variance-authority": "^0.7.1",
+		"cn": "^0.5.2",
+		"drizzle-orm": "^0.45.4",
+		"lucide-react": "^1.75.0",
+		"nitro": "3.0.260610-beta",
+		"pg": "^8.23.1",
+		"react": "^19.3.1",
+		"react-dom": "^19.3.1",
+		"shadcn": "^4.23.0",
+		"tailwindcss": "^4.3.5",
+		"tw-animate-css": "^1.4.0",
+		"zod": "^4.6.7"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "^2.6.8",
+		"@tanstack/devtools-vite": "^0.8.6",
+		"@tanstack/router-cli": "^1.168.0",
+		"@types/node": "^26.6.6",
+		"@types/pg": "^8.23.1",
+		"@types/react": "^19.3.0",
+		"@types/react-dom": "^19.3.0",
+		"@vitejs/plugin-react": "^6.3.0",
+		"drizzle-kit": "^0.31.11",
+		"typescript": "^7.0.2",
+		"vite": "^8.3.8"
+	},
+	"pnpm": {
+		"onlyBuiltDependencies": [
+			"esbuild",
+			"lightningcss"
+		]
+	}
+}

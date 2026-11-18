@@ -1,0 +1,85 @@
+{
+	"$schema": "https://biomejs.dev/schemas/2.6.8/schema.json",
+	"vcs": {
+		"enabled": true,
+		"clientKind": "git",
+		"useIgnoreFile": true
+	},
+	"files": {
+		"includes": [
+			"**",
+			"!!.agents",
+			"!!.tanstack",
+			"!!dist",
+			"!!dist-ssr",
+			"!!docs",
+			"!!drizzle",
+			"!!public",
+			"!!skills-lock.json",
+			"!!src/client/shared/shadcn",
+			"!!src/routeTree.gen.ts"
+		]
+	},
+	"formatter": {
+		"enabled": true
+	},
+	"markdown": {
+		"formatter": {
+			"enabled": false
+		}
+	},
+	"assist": {
+		"enabled": true,
+		"actions": {
+			"source": {
+				"organizeImports": "on"
+			}
+		}
+	},
+	"css": {
+		"parser": {
+			"tailwindDirectives": true
+		}
+	},
+	"tailwind": {
+		"stylesheet": "src/client/styles/global.css",
+		"mergeFunctions": ["cn"],
+		"variantFunctions": ["cva"]
+	},
+	"linter": {
+		"enabled": true,
+		"domains": {
+			"react": "recommended",
+			"tanstackQuery": "all"
+		},
+		"rules": {
+			"complexity": {
+				"noStaticOnlyClass": "off"
+			},
+			"preset": "recommended",
+			"correctness": {
+				"noUnusedImports": "error"
+			},
+			"performance": {
+				"noBarrelFile": "error",
+				"noNamespaceImport": "error"
+			},
+			"style": {
+				"useImportType": {
+					"level": "error",
+					"options": {
+						"style": "separatedType"
+					}
+				},
+				"useImportsFirst": "error",
+				"useNodejsImportProtocol": "error"
+			},
+			"nursery": {
+				"useTailwindSortedClasses": {
+					"level": "error",
+					"fix": "safe"
+				}
+			}
+		}
+	}
+}
